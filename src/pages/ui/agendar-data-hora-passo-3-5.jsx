@@ -1,0 +1,261 @@
+import '../../styles/ui/agendar-data-hora-passo-3-5.css';
+
+export function AgendarDataHoraPasso35() {
+  return (
+    <div className="ui-page ui-agendar-data-hora-passo-3-5 bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary/30">
+{/*Top Navigation*/}
+<header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light bg-surface-light/80 backdrop-blur-md px-10 py-3 dark:bg-surface-dark/90 dark:border-white/5">
+<div className="flex items-center gap-4 text-text-main dark:text-white">
+<div className="size-6 text-primary">
+<span className="material-symbols-outlined text-3xl">local_hospital</span>
+</div>
+<h2 className="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">LifeMed ClinicOps</h2>
+</div>
+<div className="flex flex-1 justify-end gap-8">
+<nav className="hidden md:flex items-center gap-9">
+<a className="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Agendamentos</a>
+<a className="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Pacientes</a>
+<a className="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Médicos</a>
+<a className="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Configurações</a>
+</nav>
+<div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20 cursor-pointer hover:border-primary transition-colors" data-alt="User profile picture placeholder" style={{backgroundImage: 'url(\'/logo.svg\')'}}></div>
+</div>
+</header>
+<main className="flex min-h-screen flex-col items-center pb-24">
+{/*Breadcrumbs & Header Container*/}
+<div className="w-full max-w-[1100px] px-4 pt-8">
+{/*Breadcrumbs*/}
+<div className="flex flex-wrap gap-2 mb-6 text-sm">
+<a className="text-text-secondary hover:text-primary transition-colors font-medium" href="#">Início</a>
+<span className="text-text-secondary font-medium">/</span>
+<span className="text-text-main dark:text-white font-medium">Agendar</span>
+</div>
+{/*Page Heading*/}
+<div className="flex flex-col gap-2 mb-8">
+<h1 className="text-text-main dark:text-white text-3xl md:text-4xl font-black tracking-tight">Agendar</h1>
+<p className="text-text-secondary dark:text-gray-400 text-base md:text-lg">Escolha o melhor dia e horário para seu atendimento.</p>
+</div>
+{/*Progress Bar (Stepper)*/}
+<div className="mb-10 w-full">
+<div className="flex flex-col gap-3">
+<div className="flex justify-between items-end">
+<p className="text-text-main dark:text-white text-sm font-bold">Passo 3 de 5</p>
+<span className="text-text-secondary dark:text-gray-500 text-xs font-semibold uppercase tracking-wider">Data &amp; Hora</span>
+</div>
+<div className="relative h-2 w-full rounded-full bg-border-light dark:bg-white/10 overflow-hidden">
+{/*Step 1 & 2 completed, Step 3 active (roughly 60%)*/}
+<div className="absolute top-0 left-0 h-full w-[60%] rounded-full bg-primary transition-all duration-500 ease-out"></div>
+</div>
+</div>
+</div>
+</div>
+{/*Two Column Layout Content*/}
+<div className="w-full max-w-[1100px] px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+{/*Left Column: Selection (Calendar & Slots)*/}
+<div className="lg:col-span-8 flex flex-col gap-6">
+{/*Selected Professional Context Card*/}
+<div className="flex items-center justify-between gap-4 rounded-xl border border-border-light bg-surface-light p-4 shadow-sm dark:bg-surface-dark dark:border-white/5 transition-all hover:border-primary/30">
+<div className="flex items-center gap-4">
+<div className="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border border-border-light dark:border-white/10" data-alt="Photo of Dr. Silva" style={{backgroundImage: 'url(\'/logo.svg\')'}}></div>
+<div className="flex flex-col">
+<p className="text-text-main dark:text-white text-base font-bold line-clamp-1">Cardiologia • Dr. Silva</p>
+<div className="flex items-center gap-1 text-text-secondary dark:text-gray-400 text-sm">
+<span className="material-symbols-outlined text-[16px]">schedule</span>
+<span>30 min estimado</span>
+</div>
+</div>
+</div>
+<button className="text-sm font-semibold text-primary hover:text-primary-hover px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-colors">
+                        Trocar
+                    </button>
+</div>
+{/*Calendar Section*/}
+<div className="rounded-2xl border border-border-light bg-surface-light p-6 shadow-sm dark:bg-surface-dark dark:border-white/5">
+<div className="flex flex-col md:flex-row gap-8">
+{/*Calendar Picker*/}
+<div className="flex-1 max-w-sm mx-auto md:mx-0">
+<div className="flex items-center justify-between mb-6">
+<h3 className="text-lg font-bold text-text-main dark:text-white">Março 2024</h3>
+<div className="flex gap-2">
+<button className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-background-light dark:hover:bg-white/5 text-text-secondary transition-colors">
+<span className="material-symbols-outlined">chevron_left</span>
+</button>
+<button className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-background-light dark:hover:bg-white/5 text-text-secondary transition-colors">
+<span className="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+{/*Days Header*/}
+<div className="grid grid-cols-7 mb-2 text-center">
+<span className="text-xs font-semibold text-text-secondary uppercase">D</span>
+<span className="text-xs font-semibold text-text-secondary uppercase">S</span>
+<span className="text-xs font-semibold text-text-secondary uppercase">T</span>
+<span className="text-xs font-semibold text-text-secondary uppercase">Q</span>
+<span className="text-xs font-semibold text-text-secondary uppercase">Q</span>
+<span className="text-xs font-semibold text-text-secondary uppercase">S</span>
+<span className="text-xs font-semibold text-text-secondary uppercase">S</span>
+</div>
+{/*Calendar Grid*/}
+<div className="grid grid-cols-7 gap-y-2 text-center text-sm">
+{/*Disabled past/empty days*/}
+<span className="py-2 text-gray-300 dark:text-gray-700">25</span>
+<span className="py-2 text-gray-300 dark:text-gray-700">26</span>
+<span className="py-2 text-gray-300 dark:text-gray-700">27</span>
+<span className="py-2 text-gray-300 dark:text-gray-700">28</span>
+<span className="py-2 text-gray-300 dark:text-gray-700">29</span>
+<span className="py-2">1</span>
+<span className="py-2">2</span>
+<span className="py-2">3</span>
+<span className="py-2">4</span>
+<span className="py-2">5</span>
+<span className="py-2">6</span>
+<span className="py-2">7</span>
+<span className="py-2">8</span>
+<span className="py-2">9</span>
+<span className="py-2">10</span>
+<span className="py-2">11</span>
+{/*Selected Day*/}
+<button className="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-primary text-text-main font-bold shadow-md ring-2 ring-primary ring-offset-2 ring-offset-white dark:ring-offset-surface-dark">12</button>
+<span className="py-2">13</span>
+<span className="py-2">14</span>
+<span className="py-2">15</span>
+<span className="py-2">16</span>
+<span className="py-2">17</span>
+<span className="py-2">18</span>
+<span className="py-2">19</span>
+<span className="py-2">20</span>
+<span className="py-2">21</span>
+<span className="py-2">22</span>
+<span className="py-2">23</span>
+<span className="py-2">24</span>
+<span className="py-2">25</span>
+<span className="py-2">26</span>
+<span className="py-2">27</span>
+<span className="py-2">28</span>
+<span className="py-2">29</span>
+<span className="py-2">30</span>
+</div>
+<button className="mt-6 w-full text-center text-sm font-medium text-primary hover:underline">
+                                Próximo horário disponível
+                            </button>
+</div>
+{/*Divider for mobile/desktop*/}
+<div className="hidden md:block w-px bg-border-light dark:bg-white/10"></div>
+<div className="block md:hidden h-px w-full bg-border-light dark:bg-white/10"></div>
+{/*Time Slots Area*/}
+<div className="flex-1 flex flex-col">
+<div className="flex items-center justify-between mb-4">
+<h4 className="font-bold text-text-main dark:text-white">Terça, 12 de Março</h4>
+<span className="text-xs font-medium text-text-secondary bg-background-light dark:bg-white/5 px-2 py-1 rounded">GMT-3</span>
+</div>
+{/*Time Filters (Morning/Afternoon)*/}
+<div className="flex gap-2 mb-4">
+<button className="text-xs font-semibold px-3 py-1.5 rounded-full bg-text-main text-white dark:bg-white dark:text-text-main">Manhã</button>
+<button className="text-xs font-semibold px-3 py-1.5 rounded-full bg-background-light text-text-secondary hover:bg-border-light dark:bg-white/5 dark:text-gray-400 dark:hover:bg-white/10 transition-colors">Tarde</button>
+</div>
+{/*Slots Grid*/}
+<div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+<button className="border border-border-light bg-surface-light dark:bg-surface-dark dark:border-white/10 hover:border-primary text-text-main dark:text-gray-200 py-2 rounded-lg text-sm font-medium transition-all">08:00</button>
+<button className="border border-border-light bg-surface-light dark:bg-surface-dark dark:border-white/10 hover:border-primary text-text-main dark:text-gray-200 py-2 rounded-lg text-sm font-medium transition-all">08:30</button>
+{/*Selected Slot*/}
+<button className="relative border-2 border-primary bg-primary/10 text-primary-darker py-2 rounded-lg text-sm font-bold shadow-sm dark:text-primary">
+                                    09:00
+                                    <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-black">
+<span className="material-symbols-outlined text-[10px] font-bold">check</span>
+</span>
+</button>
+<button className="border border-border-light bg-surface-light dark:bg-surface-dark dark:border-white/10 hover:border-primary text-text-main dark:text-gray-200 py-2 rounded-lg text-sm font-medium transition-all">09:30</button>
+<button className="border border-border-light bg-surface-light dark:bg-surface-dark dark:border-white/10 hover:border-primary text-text-main dark:text-gray-200 py-2 rounded-lg text-sm font-medium transition-all">10:00</button>
+{/*Disabled Slot*/}
+<button className="border border-transparent bg-gray-100 text-gray-400 dark:bg-white/5 dark:text-gray-600 py-2 rounded-lg text-sm font-medium cursor-not-allowed decoration-slice line-through opacity-60" disabled="">10:30</button>
+<button className="border border-border-light bg-surface-light dark:bg-surface-dark dark:border-white/10 hover:border-primary text-text-main dark:text-gray-200 py-2 rounded-lg text-sm font-medium transition-all">11:00</button>
+<button className="border border-border-light bg-surface-light dark:bg-surface-dark dark:border-white/10 hover:border-primary text-text-main dark:text-gray-200 py-2 rounded-lg text-sm font-medium transition-all">11:30</button>
+</div>
+<div className="mt-6 p-3 rounded-lg bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-100 dark:border-yellow-900/30 flex items-start gap-3">
+<span className="material-symbols-outlined text-yellow-600 dark:text-yellow-500 text-sm mt-0.5">info</span>
+<p className="text-xs text-yellow-800 dark:text-yellow-200 leading-relaxed">Alta procura para este dia. Recomendamos concluir o agendamento em até 5 minutos para garantir seu horário.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+{/*Right Column: Sticky Summary*/}
+<div className="lg:col-span-4 relative">
+<div className="sticky top-24 rounded-2xl border border-border-light bg-surface-light p-6 shadow-sm dark:bg-surface-dark dark:border-white/5">
+<h3 className="text-lg font-bold text-text-main dark:text-white mb-6 border-b border-border-light dark:border-white/5 pb-4">Resumo do agendamento</h3>
+<div className="flex flex-col gap-6">
+{/*Service Info*/}
+<div className="flex items-start gap-3">
+<div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span className="material-symbols-outlined text-xl">medical_services</span>
+</div>
+<div>
+<p className="text-sm font-medium text-text-secondary dark:text-gray-400">Serviço</p>
+<p className="text-base font-bold text-text-main dark:text-white">Cardiologia Check-up</p>
+<p className="text-xs text-text-secondary dark:text-gray-500 mt-1">Presencial</p>
+</div>
+</div>
+{/*Professional Info*/}
+<div className="flex items-start gap-3">
+<div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span className="material-symbols-outlined text-xl">person</span>
+</div>
+<div>
+<p className="text-sm font-medium text-text-secondary dark:text-gray-400">Profissional</p>
+<p className="text-base font-bold text-text-main dark:text-white">Dr. Silva</p>
+<p className="text-xs text-text-secondary dark:text-gray-500 mt-1">CRM/SP 123456</p>
+</div>
+</div>
+{/*Date & Time Info (Active Step)*/}
+<div className="flex items-start gap-3 rounded-lg bg-background-light dark:bg-white/5 p-3 border border-border-light dark:border-white/5">
+<div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-primary dark:bg-surface-dark">
+<span className="material-symbols-outlined text-xl">calendar_today</span>
+</div>
+<div>
+<p className="text-sm font-medium text-text-secondary dark:text-gray-400">Data &amp; Hora</p>
+<p className="text-base font-bold text-text-main dark:text-white">12 de Março, 09:00</p>
+<p className="text-xs text-green-600 dark:text-green-400 mt-1 flex items-center gap-1">
+<span className="material-symbols-outlined text-[12px]">check_circle</span>
+                                    Disponível
+                                </p>
+</div>
+</div>
+{/*Location Info*/}
+<div className="flex items-start gap-3">
+<div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span className="material-symbols-outlined text-xl">location_on</span>
+</div>
+<div>
+<p className="text-sm font-medium text-text-secondary dark:text-gray-400">Local</p>
+<p className="text-base font-bold text-text-main dark:text-white">Unidade Paulista</p>
+<p className="text-xs text-text-secondary dark:text-gray-500 mt-1">Av. Paulista, 1000 - Sala 304</p>
+</div>
+</div>
+</div>
+<div className="mt-8 pt-4 border-t border-border-light dark:border-white/5">
+<div className="flex justify-between items-center mb-2">
+<span className="text-sm text-text-secondary dark:text-gray-400">Valor da consulta</span>
+<span className="text-base font-bold text-text-main dark:text-white">R$ 350,00</span>
+</div>
+<p className="text-xs text-text-secondary dark:text-gray-500 text-right">Pagamento no próximo passo</p>
+</div>
+</div>
+</div>
+</div>
+{/*Sticky Footer for Actions*/}
+<div className="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-lg border-t border-border-light dark:bg-surface-dark/90 dark:border-white/5 p-4 z-40">
+<div className="max-w-[1100px] mx-auto flex items-center justify-between">
+<button className="flex items-center gap-2 px-6 py-3 rounded-xl border border-border-light hover:bg-background-light text-text-main font-bold transition-all dark:border-white/10 dark:text-white dark:hover:bg-white/5">
+<span className="material-symbols-outlined text-lg">arrow_back</span>
+                    Voltar
+                </button>
+<button className="flex items-center gap-2 px-8 py-3 rounded-xl bg-primary hover:bg-primary-hover text-text-main font-bold shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none">
+                    Continuar
+                    <span className="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+    </div>
+  );
+}

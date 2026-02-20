@@ -1,0 +1,15 @@
+.ui-recuperacao-de-senha-clinicops {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-recuperacao-de-senha-clinicops * {
+  box-sizing: border-box;
+}
+
+body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }

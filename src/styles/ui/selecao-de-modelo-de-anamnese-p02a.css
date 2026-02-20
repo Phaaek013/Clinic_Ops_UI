@@ -1,0 +1,19 @@
+.ui-selecao-de-modelo-de-anamnese-p02a {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-selecao-de-modelo-de-anamnese-p02a * {
+  box-sizing: border-box;
+}
+
+:root {
+            --primary: #13ecec;
+            --background-light: #f6f8f8;
+            --background-dark: #102222;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; }

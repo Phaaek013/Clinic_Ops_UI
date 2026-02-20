@@ -1,0 +1,9 @@
+.ui-fila-controle-interno {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-fila-controle-interno * {
+  box-sizing: border-box;
+}
+

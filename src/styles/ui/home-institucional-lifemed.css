@@ -1,0 +1,13 @@
+.ui-home-institucional-lifemed {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-home-institucional-lifemed * {
+  box-sizing: border-box;
+}
+
+body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

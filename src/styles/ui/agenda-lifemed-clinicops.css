@@ -1,0 +1,22 @@
+.ui-agenda-lifemed-clinicops {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-agenda-lifemed-clinicops * {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar for calendar grid */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .calendar-grid-cols {
+            display: grid;
+            grid-template-columns: 60px repeat(5, 1fr);
+        }

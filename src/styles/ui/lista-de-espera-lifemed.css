@@ -1,0 +1,18 @@
+.ui-lista-de-espera-lifemed {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-lista-de-espera-lifemed * {
+  box-sizing: border-box;
+}
+
+body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }

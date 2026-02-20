@@ -5,6 +5,7 @@ import { ProtectedGuard } from './guards';
 import { LoginPage } from '../pages/LoginPage';
 import { screenRoutes, showcaseRoutes, wizardRoutes } from '../mock/screenRoutes';
 import { ScreenshotPage } from '../components/ScreenshotPage';
+import { uiPagesByRoute } from '../pages/ui';
 import {
   AgendaShowcase,
   AgendarWizardShowcase,
@@ -27,6 +28,11 @@ for (const wRoute of wizardRoutes) {
 }
 
 function makePage(route) {
+  const UiPage = uiPagesByRoute[route.route];
+  if (UiPage) {
+    return <UiPage />;
+  }
+
   const Showcase = showcaseMap[route.route];
   if (Showcase && showcaseRoutes.includes(route.route)) {
     return <Showcase />;

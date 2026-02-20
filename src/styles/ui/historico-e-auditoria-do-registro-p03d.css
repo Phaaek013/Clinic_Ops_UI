@@ -1,0 +1,13 @@
+.ui-historico-e-auditoria-do-registro-p03d {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-historico-e-auditoria-do-registro-p03d * {
+  box-sizing: border-box;
+}
+
+body { font-family: 'Manrope', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #13ecec33; border-radius: 10px; }
