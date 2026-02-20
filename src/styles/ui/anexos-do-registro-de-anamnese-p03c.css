@@ -1,0 +1,19 @@
+body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #13ecec40;
+            border-radius: 10px;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+        }

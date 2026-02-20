@@ -1,0 +1,316 @@
+import '../../styles/ui/agendar-confirmacao-passo-5-5.css';
+
+const screenHtml = `<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-[#102222]/90 backdrop-blur-md border-b border-[#e7f3f3] dark:border-[#1e3a3a]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-8 bg-primary/20 text-primary-dark rounded-lg">
+<span class="material-symbols-outlined">local_hospital</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-text-main dark:text-white">LifeMed <span class="text-text-muted font-normal">ClinicOps</span></h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-primary-dark dark:text-gray-200 transition-colors" href="#">Início</a>
+<a class="text-sm font-medium text-primary-dark dark:text-primary transition-colors" href="#">Meus Agendamentos</a>
+<a class="text-sm font-medium text-text-main hover:text-primary-dark dark:text-gray-200 transition-colors" href="#">Perfil</a>
+<a class="text-sm font-medium text-text-main hover:text-primary-dark dark:text-gray-200 transition-colors" href="#">Ajuda</a>
+</nav>
+<!-- User Profile -->
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex flex-col items-end">
+<span class="text-sm font-bold text-text-main dark:text-white">Ana Souza</span>
+<span class="text-xs text-text-muted">Paciente</span>
+</div>
+<div class="size-10 rounded-full bg-gray-200 bg-cover bg-center border-2 border-white shadow-sm" data-alt="Portrait of a smiling woman used as user avatar" style="background-image: none;"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-6">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center text-sm font-medium text-text-muted hover:text-primary-dark dark:text-gray-400" href="#">
+<span class="material-symbols-outlined text-[20px] mr-2">home</span>
+                        Início
+                    </a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-text-muted/50 text-sm mx-1">chevron_right</span>
+<a class="text-sm font-medium text-text-muted hover:text-primary-dark dark:text-gray-400" href="#">Agendar</a>
+</div>
+</li>
+<li aria-current="page">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-text-muted/50 text-sm mx-1">chevron_right</span>
+<span class="text-sm font-medium text-text-main dark:text-white">Confirmação</span>
+</div>
+</li>
+</ol>
+</nav>
+<!-- Stepper -->
+<div class="mb-10">
+<div class="relative after:absolute after:inset-x-0 after:top-1/2 after:block after:h-0.5 after:-translate-y-1/2 after:rounded-lg after:bg-gray-200 dark:after:bg-gray-700">
+<ol class="relative z-10 flex justify-between text-sm font-medium text-gray-500">
+<li class="flex items-center gap-2 bg-background-light dark:bg-background-dark p-2">
+<span class="size-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="hidden sm:block text-text-main dark:text-gray-300">Serviço</span>
+</li>
+<li class="flex items-center gap-2 bg-background-light dark:bg-background-dark p-2">
+<span class="size-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="hidden sm:block text-text-main dark:text-gray-300">Profissional</span>
+</li>
+<li class="flex items-center gap-2 bg-background-light dark:bg-background-dark p-2">
+<span class="size-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="hidden sm:block text-text-main dark:text-gray-300">Data</span>
+</li>
+<li class="flex items-center gap-2 bg-background-light dark:bg-background-dark p-2">
+<span class="size-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="hidden sm:block text-text-main dark:text-gray-300">Identificação</span>
+</li>
+<li class="flex items-center gap-2 bg-background-light dark:bg-background-dark p-2">
+<span class="size-8 rounded-full bg-primary text-[#0d1b1b] flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark shadow-[0_0_15px_rgba(19,236,236,0.4)]">
+<span class="font-bold text-sm">5</span>
+</span>
+<span class="font-bold text-[#0d1b1b] dark:text-primary">Confirmação</span>
+</li>
+</ol>
+</div>
+</div>
+<!-- Page Heading -->
+<div class="mb-8">
+<h2 class="text-3xl md:text-4xl font-black text-text-main dark:text-white tracking-tight mb-2">Confirmar agendamento</h2>
+<p class="text-text-muted text-lg max-w-2xl">Revise os detalhes do seu agendamento abaixo antes de confirmar. Último passo!</p>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Review Details (Span 8) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Review Card -->
+<div class="bg-white dark:bg-[#1a2c2c] rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-6 border-b border-gray-100 dark:border-gray-800 pb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary-dark dark:text-primary">
+<span class="material-symbols-outlined">assignment</span>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white">Detalhes do Agendamento</h3>
+</div>
+<div class="space-y-8">
+<!-- Service & Pro -->
+<div class="grid md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-xs uppercase font-semibold text-text-muted tracking-wider">Serviço</span>
+<div class="font-bold text-lg text-text-main dark:text-white flex items-center gap-2">
+                                    Consulta Cardiológica
+                                    <span class="px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">30 min</span>
+</div>
+<span class="text-sm text-gray-500">Avaliação de rotina e check-up.</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs uppercase font-semibold text-text-muted tracking-wider">Profissional</span>
+<div class="flex items-center gap-3 mt-1">
+<div class="size-10 rounded-full bg-gray-100 bg-cover bg-center" data-alt="Doctor portrait" style="background-image: none;"></div>
+<div>
+<div class="font-bold text-text-main dark:text-white">Dr. Roberto Silva</div>
+<div class="text-xs text-text-muted">Cardiologista • CRM 123456</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Date & Location -->
+<div class="grid md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-xs uppercase font-semibold text-text-muted tracking-wider">Data e Hora</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-primary-dark">calendar_month</span>
+<span class="font-bold text-lg text-text-main dark:text-white">14 Out, 2023</span>
+</div>
+<div class="flex items-center gap-2 pl-8">
+<span class="material-symbols-outlined text-gray-400 text-sm">schedule</span>
+<span class="text-base text-text-main dark:text-gray-200">14:30 - 15:00</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs uppercase font-semibold text-text-muted tracking-wider">Local</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-primary-dark">location_on</span>
+<span class="font-bold text-lg text-text-main dark:text-white">Unidade Paulista</span>
+</div>
+<div class="pl-8 text-sm text-gray-500 dark:text-gray-400">
+                                    Av. Paulista, 1000 - Sala 42<br/>São Paulo - SP
+                                </div>
+</div>
+</div>
+<!-- Patient Info -->
+<div class="border-t border-gray-100 dark:border-gray-800 pt-6">
+<span class="text-xs uppercase font-semibold text-text-muted tracking-wider block mb-3">Paciente</span>
+<div class="flex items-center gap-4 p-3 bg-background-light dark:bg-background-dark/50 rounded-lg border border-gray-100 dark:border-gray-700">
+<div class="size-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-xs">AS</div>
+<div class="flex-1">
+<div class="text-sm font-bold text-text-main dark:text-white">Ana Souza</div>
+<div class="text-xs text-text-muted">(11) 99999-9999 • ana.souza@email.com</div>
+</div>
+<button class="text-primary-dark hover:text-primary text-xs font-semibold px-2 py-1 rounded hover:bg-primary/10 transition-colors">Editar</button>
+</div>
+</div>
+<!-- Waitlist Option -->
+<div class="bg-blue-50/50 dark:bg-blue-900/10 rounded-xl p-4 border border-blue-100 dark:border-blue-900/30">
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="relative flex items-center mt-0.5">
+<input class="peer sr-only" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/30 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+<div class="flex-1">
+<span class="block text-sm font-bold text-text-main dark:text-white group-hover:text-primary-dark transition-colors">Quero adiantar se abrir vaga</span>
+<span class="block text-xs text-text-muted mt-1">Se um horário anterior ficar disponível com este profissional, notificaremos você por SMS/WhatsApp.</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Policies Card -->
+<div class="bg-gray-50 dark:bg-[#152626] rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
+<h4 class="text-sm font-bold text-text-main dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">info</span> Políticas de Agendamento
+                    </h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-green-500 text-lg mt-0.5">check_circle</span>
+<span><strong>Cancelamento Gratuito:</strong> Você pode cancelar ou reagendar sem custos até 24 horas antes do horário marcado.</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-amber-500 text-lg mt-0.5">schedule</span>
+<span><strong>Chegada:</strong> Recomendamos chegar com 15 minutos de antecedência para preenchimento de ficha cadastral.</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-blue-500 text-lg mt-0.5">id_card</span>
+<span><strong>Documentos:</strong> Não esqueça de trazer um documento com foto e sua carteirinha do convênio (se aplicável).</span>
+</li>
+</ul>
+</div>
+<!-- Actions Area -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 pt-4">
+<button class="w-full sm:w-auto px-6 py-3 rounded-lg text-text-main dark:text-gray-300 font-bold hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Voltar
+                    </button>
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+<a class="text-sm font-medium text-text-muted hover:text-primary-dark underline decoration-dotted underline-offset-4" href="#">Alterar data e horário</a>
+<button class="w-full sm:w-auto bg-primary hover:bg-primary-dark text-[#0d1b1b] px-8 py-3.5 rounded-lg font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group">
+                            Confirmar Agendamento
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">check</span>
+</button>
+</div>
+</div>
+<!-- Help Section -->
+<div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
+<p class="text-text-muted text-sm mb-3">Teve algum problema ou precisa de ajuda especial?</p>
+<button class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-text-main dark:text-white hover:border-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary-dark text-lg">headset_mic</span>
+                        Falar com Atendimento
+                    </button>
+</div>
+<!-- DEMO: SUCCESS STATE (Normally hidden, but showing here for design showcase requirements) -->
+<div class="mt-12 p-6 rounded-2xl border-2 border-dashed border-green-200 bg-green-50/30 dark:border-green-900/30 dark:bg-green-900/10">
+<p class="text-xs font-bold text-green-600 dark:text-green-400 mb-4 uppercase tracking-widest text-center">[Demo: Estado de Sucesso - Pós-Click]</p>
+<div class="bg-white dark:bg-[#1a2c2c] rounded-xl shadow-lg overflow-hidden max-w-2xl mx-auto">
+<div class="bg-green-500 p-6 text-center">
+<div class="size-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+<span class="material-symbols-outlined text-green-500 text-4xl filled-icon">check</span>
+</div>
+<h2 class="text-2xl font-black text-white mb-1">Agendamento Confirmado!</h2>
+<p class="text-green-100">Enviamos os detalhes para seu e-mail.</p>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center border-b border-gray-100 dark:border-gray-700 pb-4 mb-4">
+<div class="text-sm text-gray-500 dark:text-gray-400">Código do agendamento</div>
+<div class="text-xl font-mono font-bold text-text-main dark:text-white tracking-widest">#LIF-8823</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition text-sm font-bold text-text-main dark:text-white">
+<span class="material-symbols-outlined text-blue-500">calendar_add_on</span>
+                                    Add. Calendário
+                                </button>
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition text-sm font-bold text-text-main dark:text-white">
+<span class="material-symbols-outlined text-gray-500">print</span>
+                                    Imprimir
+                                </button>
+</div>
+<button class="w-full bg-primary/20 hover:bg-primary/30 text-primary-dark dark:text-primary font-bold py-3 rounded-lg transition-colors">
+                                Ir para Meus Agendamentos
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Summary (Span 4) -->
+<div class="lg:col-span-4 relative">
+<div class="sticky top-24 space-y-4">
+<!-- Summary Card -->
+<div class="bg-white dark:bg-[#1a2c2c] rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-t-4 border-t-primary overflow-hidden">
+<div class="p-6">
+<h3 class="font-bold text-lg text-text-main dark:text-white mb-6">Resumo Final</h3>
+<!-- Timeline -->
+<div class="relative border-l-2 border-dashed border-gray-200 dark:border-gray-700 ml-3 space-y-8 pb-2">
+<!-- Item 1 -->
+<div class="relative pl-6">
+<div class="absolute -left-[9px] top-1 size-4 bg-primary rounded-full ring-4 ring-white dark:ring-[#1a2c2c]"></div>
+<p class="text-xs text-text-muted font-bold uppercase mb-1">Serviço</p>
+<p class="text-sm font-medium text-text-main dark:text-gray-200">Consulta Cardiológica</p>
+<p class="text-xs text-gray-500">Particular</p>
+</div>
+<!-- Item 2 -->
+<div class="relative pl-6">
+<div class="absolute -left-[9px] top-1 size-4 bg-gray-200 dark:bg-gray-600 rounded-full ring-4 ring-white dark:ring-[#1a2c2c]"></div>
+<p class="text-xs text-text-muted font-bold uppercase mb-1">Data</p>
+<p class="text-sm font-medium text-text-main dark:text-gray-200">14 Outubro, 14:30</p>
+</div>
+<!-- Item 3 -->
+<div class="relative pl-6">
+<div class="absolute -left-[9px] top-1 size-4 bg-gray-200 dark:bg-gray-600 rounded-full ring-4 ring-white dark:ring-[#1a2c2c]"></div>
+<p class="text-xs text-text-muted font-bold uppercase mb-1">Total Estimado</p>
+<p class="text-xl font-bold text-text-main dark:text-white">R$ 350,00</p>
+<p class="text-xs text-gray-400 mt-1">Pagamento no local</p>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-gray-500">Status</span>
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 flex items-center gap-1">
+<span class="size-2 rounded-full bg-amber-500 animate-pulse"></span>
+                                        Pendente
+                                    </span>
+</div>
+<p class="text-xs text-center text-gray-400 mt-4 leading-relaxed">
+                                    Ao confirmar, você concorda com os <a class="underline hover:text-primary-dark" href="#">Termos de Uso</a> da LifeMed. Você poderá gerenciar este agendamento em sua conta.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Security Badge -->
+<div class="flex items-center justify-center gap-2 text-gray-400 dark:text-gray-600 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Seus dados estão protegidos e seguros.</span>
+</div>
+</div>
+</div>
+</div>
+</main>`;
+
+export function UiAgendarConfirmacaoPasso55Page() {
+  return (
+    <section className="ui-stitch-screen" data-route="/ui/agendar-confirmacao-passo-5-5" dangerouslySetInnerHTML={{ __html: screenHtml }} />
+  );
+}

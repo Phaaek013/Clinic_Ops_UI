@@ -1,0 +1,288 @@
+import '../../styles/ui/agendar-conta-passo-4-5.css';
+
+const screenHtml = `<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark px-6 lg:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-2xl">local_hospital</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">LifeMed ClinicOps</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Início</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Especialidades</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Corpo Clínico</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Contato</a>
+</div>
+</div>
+<div class="lg:hidden">
+<button class="p-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-4 md:px-8 py-6 pb-24">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 py-2 mb-4 text-sm">
+<a class="text-teal-600 dark:text-primary font-medium hover:underline" href="#">Início</a>
+<span class="text-gray-400">/</span>
+<span class="text-text-main dark:text-white font-medium">Agendar</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-col gap-2 mb-8">
+<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-text-main dark:text-white">Agendar</h1>
+<p class="text-text-muted dark:text-gray-400 text-base">Identifique-se para garantir seu horário com segurança.</p>
+</div>
+<!-- Stepper -->
+<div class="w-full mb-10 overflow-x-auto pb-2">
+<div class="min-w-[600px] flex items-center justify-between relative">
+<!-- Line Background -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200 dark:bg-slate-700 -z-10 rounded-full"></div>
+<!-- Step 1: Done -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-8 rounded-full bg-primary text-text-main flex items-center justify-center font-bold ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<span class="text-xs font-bold text-teal-700 dark:text-primary">Especialidade</span>
+</div>
+<!-- Step 2: Done -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-8 rounded-full bg-primary text-text-main flex items-center justify-center font-bold ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<span class="text-xs font-bold text-teal-700 dark:text-primary">Profissional</span>
+</div>
+<!-- Step 3: Done -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="size-8 rounded-full bg-primary text-text-main flex items-center justify-center font-bold ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<span class="text-xs font-bold text-teal-700 dark:text-primary">Data e Hora</span>
+</div>
+<!-- Step 4: Active -->
+<div class="flex flex-col items-center gap-2">
+<div class="size-8 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-bold ring-4 ring-background-light dark:ring-background-dark shadow-lg scale-110">
+                        4
+                    </div>
+<span class="text-xs font-bold text-text-main dark:text-white">Identificação</span>
+</div>
+<!-- Step 5: Disabled -->
+<div class="flex flex-col items-center gap-2 opacity-50">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center font-bold ring-4 ring-background-light dark:ring-background-dark">
+                        5
+                    </div>
+<span class="text-xs font-medium text-slate-500">Confirmação</span>
+</div>
+</div>
+</div>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- Left Column: Authentication Form -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-6">
+<!-- Tabs -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-1 shadow-sm border border-slate-200 dark:border-slate-800 flex">
+<button class="flex-1 py-3 px-4 rounded-lg text-sm font-bold text-text-main bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 transition-all">
+                        Criar conta
+                    </button>
+<button class="flex-1 py-3 px-4 rounded-lg text-sm font-medium text-slate-500 hover:text-text-main dark:hover:text-white transition-all">
+                        Entrar
+                    </button>
+</div>
+<!-- Content Area -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 md:p-8 shadow-card border border-slate-200 dark:border-slate-800">
+<div class="mb-6">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Nova conta</h3>
+<p class="text-sm text-text-muted mt-1">Preencha seus dados para criar seu perfil de paciente.</p>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="space-y-1.5 md:col-span-2">
+<label class="block text-sm font-medium text-text-main dark:text-gray-200" for="name">Nome Completo</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<input class="block w-full pl-10 rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-text-main dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 placeholder-slate-400" id="name" placeholder="Ex: Maria Silva" type="text"/>
+</div>
+</div>
+<div class="space-y-1.5 md:col-span-2">
+<label class="block text-sm font-medium text-text-main dark:text-gray-200" for="email">E-mail</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="block w-full pl-10 rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-text-main dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 placeholder-slate-400" id="email" placeholder="seu@email.com" type="email"/>
+</div>
+<!-- Example Error Message (Hidden by default) -->
+<p class="hidden text-xs text-red-500 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                                    Este email já está em uso.
+                                </p>
+</div>
+<div class="space-y-1.5">
+<label class="block text-sm font-medium text-text-main dark:text-gray-200" for="phone">Celular <span class="text-slate-400 font-normal">(Opcional)</span></label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</div>
+<input class="block w-full pl-10 rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-text-main dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 placeholder-slate-400" id="phone" placeholder="(00) 00000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block text-sm font-medium text-text-main dark:text-gray-200" for="birthdate">Data de Nascimento</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<input class="block w-full pl-10 rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-text-main dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 placeholder-slate-400" id="birthdate" type="date"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block text-sm font-medium text-text-main dark:text-gray-200" for="password">Senha</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="block w-full pl-10 rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-text-main dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 placeholder-slate-400" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block text-sm font-medium text-text-main dark:text-gray-200" for="confirm-password">Confirmar Senha</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</div>
+<input class="block w-full pl-10 rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-text-main dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 placeholder-slate-400" id="confirm-password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<div class="flex items-start">
+<div class="flex h-6 items-center">
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary bg-slate-50 dark:bg-slate-800 dark:border-slate-600" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm leading-6">
+<label class="font-medium text-text-main dark:text-gray-200" for="terms">Eu concordo com os Termos de Uso</label>
+<p class="text-slate-500 dark:text-slate-400">Li e aceito a <a class="text-teal-600 hover:text-teal-500 underline" href="#">Política de Privacidade</a> e o processamento dos meus dados de saúde.</p>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- Trust Section -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-4 flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-white dark:bg-slate-800 rounded-full text-teal-600 shadow-sm">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Seus dados estão seguros</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Seguimos rigorosamente a LGPD para proteção médica.</p>
+</div>
+</div>
+<a class="text-sm font-medium text-teal-700 dark:text-primary hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+                        Precisa de ajuda?
+                    </a>
+</div>
+</div>
+<!-- Right Column: Sticky Summary -->
+<div class="lg:col-span-5 xl:col-span-4 relative h-full">
+<div class="sticky top-24 space-y-4">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-floating border border-slate-100 dark:border-slate-700 overflow-hidden">
+<!-- Card Header -->
+<div class="bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-slate-800 dark:to-slate-800 px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+<h3 class="text-base font-bold text-text-main dark:text-white">Resumo do agendamento</h3>
+<span class="bg-white dark:bg-slate-700 text-teal-700 dark:text-primary text-[10px] uppercase font-bold px-2 py-1 rounded border border-teal-100 dark:border-slate-600">Passo 4/5</span>
+</div>
+<!-- Card Content -->
+<div class="p-6 flex flex-col gap-6">
+<!-- Date & Time Large -->
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 rounded-xl p-3 text-center min-w-[70px]">
+<span class="block text-xs font-bold text-teal-700 dark:text-primary uppercase tracking-wide">Out</span>
+<span class="block text-2xl font-bold text-text-main dark:text-white">14</span>
+</div>
+<div>
+<div class="flex items-center gap-2 text-text-main dark:text-white font-bold text-lg">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                                        10:30
+                                    </div>
+<span class="text-sm text-slate-500">Segunda-feira</span>
+</div>
+</div>
+<hr class="border-dashed border-slate-200 dark:border-slate-700"/>
+<!-- Details List -->
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 mt-0.5">medical_services</span>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider">Especialidade</p>
+<p class="text-sm font-semibold text-text-main dark:text-white">Consulta Cardiológica</p>
+<p class="text-xs text-slate-400">Duração aprox. 45 min</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="size-8 rounded-full overflow-hidden bg-slate-200 mt-0.5 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of Dr. Roberto Silva smiling professionally in a white coat" src="/placeholder.svg"/>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider">Profissional</p>
+<p class="text-sm font-semibold text-text-main dark:text-white">Dr. Roberto Silva</p>
+<p class="text-xs text-slate-400">Cardiologista • CRM 123456</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 mt-0.5">location_on</span>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider">Local</p>
+<p class="text-sm font-semibold text-text-main dark:text-white">Unidade Centro - Sala 302</p>
+<p class="text-xs text-slate-400">Av. Paulista, 1000 - São Paulo</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Alert -->
+<div class="bg-amber-50 dark:bg-amber-900/20 px-6 py-3 border-t border-amber-100 dark:border-amber-800/30 flex items-start gap-2">
+<span class="material-symbols-outlined text-amber-500 text-sm mt-0.5">info</span>
+<p class="text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
+                                Este horário está pré-reservado por <span class="font-bold">09:54</span> minutos. Complete o cadastro para confirmar.
+                            </p>
+</div>
+</div>
+<!-- Map mini (Visual candy) -->
+<div class="rounded-xl overflow-hidden h-32 relative shadow-card group">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Top down view of a city map with streets and buildings" data-location="São Paulo" src="/placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">map</span> Ver no mapa
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 px-6 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg text-slate-600 dark:text-slate-300 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                Voltar
+            </button>
+<div class="flex items-center gap-4">
+<span class="text-xs text-slate-400 hidden sm:block">Você receberá um email de confirmação.</span>
+<button class="flex items-center gap-2 px-8 py-3 rounded-lg bg-primary hover:bg-primary-dark text-text-main font-bold shadow-lg shadow-primary/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Criar conta e continuar
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>`;
+
+export function UiAgendarContaPasso45Page() {
+  return (
+    <section className="ui-stitch-screen" data-route="/ui/agendar-conta-passo-4-5" dangerouslySetInnerHTML={{ __html: screenHtml }} />
+  );
+}

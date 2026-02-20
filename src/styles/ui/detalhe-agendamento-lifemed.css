@@ -1,0 +1,11 @@
+/* Custom scrollbar for timeline */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 15px;
+            width: 2px;
+            background-color: #e7f3f3;
+            z-index: 0;
+        }

@@ -1,0 +1,224 @@
+import '../../styles/ui/ficha-atendimento-impressao-a4.css';
+
+const screenHtml = `<!-- Print Toolbar (Hidden on Print) -->
+<header class="no-print sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-border-color px-6 py-3 shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Left: Back & Title -->
+<div class="flex items-center gap-6 w-full md:w-auto">
+<a class="group flex items-center gap-2 text-text-main hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+<span class="text-sm font-semibold">Voltar</span>
+</a>
+<div class="h-6 w-px bg-border-color hidden md:block"></div>
+<h1 class="text-lg font-bold tracking-tight text-text-main">Ficha de atendimento</h1>
+</div>
+<!-- Center: Helper Text -->
+<div class="hidden md:block text-text-secondary text-xs font-medium bg-background-light px-3 py-1 rounded-full border border-border-color">
+                Na impressão, esta barra não aparece.
+            </div>
+<!-- Right: Actions -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<!-- Dropdown Trigger -->
+<button aria-label="Opções" class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-background-light text-text-main transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<!-- Download Button -->
+<button class="flex items-center justify-center h-10 px-4 rounded-lg bg-background-light border border-transparent hover:border-border-color text-text-main text-sm font-bold transition-all gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="hidden sm:inline">Baixar PDF</span>
+</button>
+<!-- Print Button -->
+<button class="flex items-center justify-center h-10 px-6 rounded-lg bg-primary hover:bg-[#0fd9d9] text-text-main text-sm font-bold shadow-sm transition-colors gap-2" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Imprimir</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area (Preview Background) -->
+<main class="flex-grow flex justify-center overflow-y-auto overflow-x-hidden p-4 md:p-8">
+<!-- A4 Paper Representation -->
+<div class="a4-sheet relative flex flex-col p-12 box-border">
+<!-- HEADER -->
+<div class="flex justify-between items-start border-b-2 border-primary/30 pb-6 mb-6">
+<div class="flex gap-4 items-center">
+<!-- Logo Placeholder -->
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">local_hospital</span>
+</div>
+<div>
+<h2 class="text-2xl font-extrabold tracking-tight text-text-main uppercase">LifeMed <span class="text-text-secondary font-bold">ClinicOps</span></h2>
+<p class="text-sm text-text-main font-semibold">Unidade Central</p>
+</div>
+</div>
+<div class="text-right text-xs text-text-secondary space-y-1">
+<p class="font-bold text-text-main text-sm">LifeMed Serviços Médicos S.A.</p>
+<p>Rua das Flores, 123 - Centro</p>
+<p>São Paulo, SP - CEP 01001-000</p>
+<p>(11) 3214-5588 | contato@lifemed.com.br</p>
+</div>
+</div>
+<!-- SECTION: IDENTIFICAÇÃO DO ATENDIMENTO -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-3">
+<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-base">badge</span>
+                        Identificação do Atendimento
+                    </h3>
+<!-- Status Badge (Print Safe: Uses borders/text instead of heavy background) -->
+<div class="border border-text-main px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wide">
+                        Agendado
+                    </div>
+</div>
+<div class="grid grid-cols-12 gap-y-4 gap-x-6 bg-background-light/50 p-4 rounded-lg border border-border-color print:bg-transparent print:border-gray-300 print:p-2">
+<!-- ID -->
+<div class="col-span-3">
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">ID Atendimento</p>
+<p class="text-base font-bold text-text-main">#884291</p>
+</div>
+<!-- Date/Time -->
+<div class="col-span-5">
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Data e Hora</p>
+<p class="text-base font-bold text-text-main">24/10/2023 às 14:30</p>
+</div>
+<!-- Room -->
+<div class="col-span-4">
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Sala / Guichê</p>
+<p class="text-base font-bold text-text-main">Consultório 04</p>
+</div>
+<!-- Professional -->
+<div class="col-span-6">
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Profissional</p>
+<p class="text-sm font-bold text-text-main">Dr. Ricardo Silva (CRM/SP 123456)</p>
+</div>
+<!-- Specialty -->
+<div class="col-span-6">
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Especialidade / Serviço</p>
+<p class="text-sm font-bold text-text-main">Cardiologia - Consulta Rotina</p>
+</div>
+</div>
+<!-- Manual Check-in Area -->
+<div class="mt-2 flex gap-6 items-center pt-2">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 border-2 border-text-main rounded-sm print:border-black"></div>
+<span class="text-xs font-bold uppercase text-text-main">Compareceu</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase text-text-main">Horário de Chegada:</span>
+<div class="w-24 border-b-2 border-border-color print:border-gray-400 h-5"></div>
+</div>
+</div>
+</div>
+<!-- SECTION: DADOS DO PACIENTE -->
+<div class="mb-8">
+<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary flex items-center gap-2 mb-3 border-b border-border-color pb-1">
+<span class="material-symbols-outlined text-base">person</span>
+                    Dados do Paciente
+                </h3>
+<div class="grid grid-cols-2 gap-y-4 gap-x-8">
+<div>
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Nome Completo</p>
+<p class="text-lg font-bold text-text-main">Ana Clara de Souza Mendes</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Data de Nascimento</p>
+<p class="text-sm font-medium text-text-main">12/05/1985 (38 anos)</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Documento (CPF)</p>
+<p class="text-sm font-medium text-text-main">123.456.789-00</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Contato</p>
+<p class="text-sm font-medium text-text-main">(11) 99876-5432</p>
+</div>
+<div class="col-span-2">
+<p class="text-[10px] uppercase text-text-secondary font-bold mb-0.5">Convênio</p>
+<p class="text-sm font-medium text-text-main">Bradesco Saúde (Plano Top Nacional)</p>
+</div>
+</div>
+</div>
+<!-- SECTION: ANOTAÇÕES (MANUAL) -->
+<div class="mb-8 flex-grow">
+<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-base">edit_note</span>
+                    Anotações Clínicas / Observações
+                </h3>
+<div class="flex flex-col gap-8 pt-2">
+<!-- Ruled lines for writing -->
+<div class="border-b border-gray-300 w-full"></div>
+<div class="border-b border-gray-300 w-full"></div>
+<div class="border-b border-gray-300 w-full"></div>
+<div class="border-b border-gray-300 w-full"></div>
+<div class="border-b border-gray-300 w-full"></div>
+<div class="border-b border-gray-300 w-full"></div>
+<div class="border-b border-gray-300 w-full"></div>
+</div>
+</div>
+<!-- SECTION: PROCEDIMENTOS (TABLE) -->
+<div class="mb-10">
+<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-base">medical_services</span>
+                    Procedimentos Realizados
+                </h3>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b-2 border-border-color print:border-gray-800">
+<th class="py-2 text-[10px] uppercase font-bold text-text-secondary w-3/5">Descrição do Procedimento / Item</th>
+<th class="py-2 text-[10px] uppercase font-bold text-text-secondary w-1/5 text-center">Qtd.</th>
+<th class="py-2 text-[10px] uppercase font-bold text-text-secondary w-1/5 text-right">Valor (R$)</th>
+</tr>
+</thead>
+<tbody>
+<!-- Empty rows for manual entry -->
+<tr class="border-b border-border-color print:border-gray-300 h-10">
+<td></td><td></td><td></td>
+</tr>
+<tr class="border-b border-border-color print:border-gray-300 h-10">
+<td></td><td></td><td></td>
+</tr>
+<tr class="border-b border-border-color print:border-gray-300 h-10">
+<td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- SECTION: ASSINATURAS -->
+<div class="mt-auto grid grid-cols-2 gap-16 pt-8">
+<div class="flex flex-col items-center">
+<div class="w-full border-b border-black mb-2"></div>
+<p class="text-xs font-bold uppercase text-text-main text-center">Assinatura do Paciente / Responsável</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-full border-b border-black mb-2"></div>
+<p class="text-xs font-bold uppercase text-text-main text-center">Assinatura do Profissional</p>
+</div>
+</div>
+<!-- FOOTER -->
+<div class="mt-8 pt-4 border-t border-dashed border-gray-300 text-[10px] text-text-secondary flex justify-between items-center">
+<div class="flex gap-4">
+<span>Impresso em: 24/10/2023 10:15 por Admin</span>
+<span>LifeMed ClinicOps v2.4</span>
+</div>
+<div class="max-w-[50%] text-right">
+                    Documento de uso interno. Contém dados sensíveis protegidos pela LGPD.
+                </div>
+</div>
+</div>
+</main>
+<!-- Floating Empty State / Error Hint (Hidden by default, just conceptual placement per prompt requirements) -->
+<!-- 
+    <div class="hidden absolute inset-0 bg-white/80 z-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-xl shadow-xl border border-red-100 flex flex-col items-center text-center">
+            <span class="material-symbols-outlined text-4xl text-red-500 mb-2">error</span>
+            <h3 class="font-bold text-lg">Não foi possível carregar a ficha</h3>
+            <button class="mt-4 px-4 py-2 bg-gray-100 rounded-lg text-sm font-bold">Tentar novamente</button>
+        </div>
+    </div> 
+    -->`;
+
+export function UiFichaAtendimentoImpressaoA4Page() {
+  return (
+    <section className="ui-stitch-screen" data-route="/ui/ficha-atendimento-impressao-a4" dangerouslySetInnerHTML={{ __html: screenHtml }} />
+  );
+}
