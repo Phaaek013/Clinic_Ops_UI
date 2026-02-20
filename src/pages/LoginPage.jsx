@@ -22,18 +22,25 @@ export function LoginPage() {
 
   return (
     <div className="login-page">
-      <form onSubmit={submit} className="login-card">
-        <img src="/logo.svg" alt="Logo" className="brand-login" />
-        <h1>ClinicOps Demo Login</h1>
-        <label>Email<input value={email} onChange={(e) => setEmail(e.target.value)} /></label>
-        <label>Senha<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} /></label>
+      <form onSubmit={submit} className="login-card stitch-login-card">
+        <p className="eyebrow">ClinicOps Portal</p>
+        <h1>Entrar no Portal</h1>
+        <p className="muted">Acesse o painel operacional da clínica com sua conta interna.</p>
+
+        <label>
+          Email
+          <input value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label>
+
+        <label>
+          Senha
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label>
+
         {error && <p className="error">{error}</p>}
+
         <button type="submit">Entrar</button>
-        <ul>
-          <li>lifemed@demo.local / 123456</li>
-          <li>internal@demo.local / 123456</li>
-          <li>admin@demo.local / 123456</li>
-        </ul>
+        <small className="muted">Demo: lifemed@demo.local / 123456</small>
       </form>
     </div>
   );

@@ -3,18 +3,22 @@ import { PublicLayout } from '../layout/PublicLayout';
 import { AppShell } from '../layout/AppShell';
 import { ProtectedGuard } from './guards';
 import { LoginPage } from '../pages/LoginPage';
-import { screenRoutes, wizardRoutes } from '../mock/screenRoutes';
+import { screenRoutes, showcaseRoutes, wizardRoutes } from '../mock/screenRoutes';
 import { ScreenshotPage } from '../components/ScreenshotPage';
 import {
+  AgendaShowcase,
   AgendarWizardShowcase,
   DashboardShowcase,
   NovoAgendamentoShowcase,
+  PacienteDetalheShowcase,
   PacientesShowcase
 } from '../pages/ShowcasePages';
 
 const showcaseMap = {
   '/ui/dashboard-clinicops-dark-mode': DashboardShowcase,
+  '/ui/agenda-lifemed-clinicops': AgendaShowcase,
   '/ui/pacientes-lifemed-clinicops': PacientesShowcase,
+  '/ui/detalhe-paciente-lifemed': PacienteDetalheShowcase,
   '/ui/novo-agendamento-interno': NovoAgendamentoShowcase
 };
 
@@ -24,7 +28,7 @@ for (const wRoute of wizardRoutes) {
 
 function makePage(route) {
   const Showcase = showcaseMap[route.route];
-  if (Showcase) {
+  if (Showcase && showcaseRoutes.includes(route.route)) {
     return <Showcase />;
   }
 
