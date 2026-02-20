@@ -43,3 +43,13 @@ export const wizardRoutes = [
   '/ui/agendar-conta-passo-4-5',
   '/ui/agendar-confirmacao-passo-5-5'
 ];
+
+
+export const showcaseRoutes = [
+  '/ui/dashboard-clinicops-dark-mode',
+  '/ui/agenda-lifemed-clinicops',
+  '/ui/pacientes-lifemed-clinicops',
+  '/ui/detalhe-paciente-lifemed',
+  '/ui/novo-agendamento-interno',
+  ...wizardRoutes
+];
