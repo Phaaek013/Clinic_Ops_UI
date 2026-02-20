@@ -1,0 +1,9 @@
+.ui-agendar-servico-passo-1-5 {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-agendar-servico-passo-1-5 * {
+  box-sizing: border-box;
+}
+

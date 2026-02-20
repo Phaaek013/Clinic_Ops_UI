@@ -1,0 +1,28 @@
+.ui-anexos-do-registro-de-anamnese-p03c {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-anexos-do-registro-de-anamnese-p03c * {
+  box-sizing: border-box;
+}
+
+body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #13ecec40;
+            border-radius: 10px;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+        }

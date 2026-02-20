@@ -1,0 +1,9 @@
+.ui-profissionais-lifemed-clinicops {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-profissionais-lifemed-clinicops * {
+  box-sizing: border-box;
+}
+

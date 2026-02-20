@@ -1,0 +1,9 @@
+.ui-agendar-data-hora-passo-3-5 {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-agendar-data-hora-passo-3-5 * {
+  box-sizing: border-box;
+}
+

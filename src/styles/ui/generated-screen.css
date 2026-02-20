@@ -1,0 +1,16 @@
+.ui-generated-screen {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-generated-screen * {
+  box-sizing: border-box;
+}
+
+body {
+      background-color: #f9fafb; /* Off-white/Very light gray */
+    }
+    /* Custom shadow for the card */
+    .card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03);
+    }

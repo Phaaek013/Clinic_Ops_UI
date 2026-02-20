@@ -1,0 +1,13 @@
+.ui-dashboard-clinicops-dark-mode {
+  width: 100%;
+  min-height: 100%;
+}
+
+.ui-dashboard-clinicops-dark-mode * {
+  box-sizing: border-box;
+}
+
+body { font-family: 'Manrope', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #2a3d3a; border-radius: 10px; }
