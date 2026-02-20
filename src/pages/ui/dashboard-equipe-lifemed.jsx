@@ -1,0 +1,469 @@
+import '../../styles/ui/dashboard-equipe-lifemed.css';
+
+const screenHtml = `<!-- Sidebar -->
+<aside class="w-64 bg-surface-light border-r border-[#e7f3f3] flex flex-col justify-between h-full shrink-0 z-20 hidden lg:flex">
+<div class="flex flex-col h-full">
+<!-- Header -->
+<div class="p-6 pb-2">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-primary/20 flex items-center justify-center rounded-lg size-10 text-primary-dark">
+<span class="material-symbols-outlined">local_hospital</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-lg font-bold leading-tight">LifeMed</h1>
+<p class="text-text-muted text-xs font-medium uppercase tracking-wide">ClinicOps</p>
+</div>
+</div>
+<!-- Nav Items -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 border-l-4 border-primary text-text-main group" href="#">
+<span class="material-symbols-outlined text-primary-dark" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-medium">Agenda</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="text-sm font-medium">Agendamentos</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Pacientes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined">hourglass_empty</span>
+<span class="text-sm font-medium">Lista de espera</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined">queue</span>
+<span class="text-sm font-medium">Fila</span>
+</a>
+<div class="my-2 border-t border-gray-100"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span class="text-sm font-medium">Disponibilidade</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="text-sm font-medium">Relatórios</span>
+</a>
+</nav>
+</div>
+<!-- Footer -->
+<div class="p-4 border-t border-[#e7f3f3]">
+<div class="flex items-center gap-3 px-3 py-2 mb-2">
+<span class="material-symbols-outlined text-text-muted">admin_panel_settings</span>
+<div class="flex flex-col">
+<span class="text-text-main text-sm font-medium">Painel Admin</span>
+<span class="text-[10px] text-text-muted bg-gray-100 px-1.5 py-0.5 rounded w-fit">ADMINISTRADOR</span>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-red-500 hover:bg-red-50 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Sair</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Topbar -->
+<header class="h-16 bg-surface-light border-b border-[#e7f3f3] flex items-center justify-between px-6 shrink-0 z-10">
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button class="lg:hidden mr-4 text-text-main">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Left: Title & Date Controls -->
+<div class="flex items-center gap-6">
+<h2 class="text-xl font-bold text-text-main hidden md:block">Dashboard</h2>
+<div class="h-6 w-px bg-gray-200 hidden md:block"></div>
+<div class="flex items-center gap-2 bg-background-light p-1 rounded-lg border border-gray-200">
+<button class="px-3 py-1 bg-white shadow-sm rounded border border-gray-100 text-xs font-semibold text-text-main hover:bg-gray-50">Hoje</button>
+<div class="flex items-center gap-2 px-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">calendar_today</span>
+<span class="text-sm font-medium text-text-main">14 Out, 2023</span>
+<span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Center/Right: Actions -->
+<div class="flex items-center gap-4 flex-1 justify-end">
+<!-- Pro Filter -->
+<div class="hidden md:flex items-center gap-2 max-w-[200px] w-full">
+<div class="relative w-full group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-text-muted text-[20px]">stethoscope</span>
+<select class="w-full bg-background-light border-none rounded-lg py-2 pl-10 pr-8 text-sm font-medium text-text-main focus:ring-1 focus:ring-primary cursor-pointer hover:bg-gray-100 transition-colors">
+<option>Todos Profissionais</option>
+<option>Dr. Roberto Silva</option>
+<option>Dra. Ana Costa</option>
+</select>
+</div>
+</div>
+<!-- Patient Search -->
+<div class="relative w-full max-w-[240px] hidden sm:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-text-muted text-[20px]">search</span>
+<input class="w-full bg-background-light border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary placeholder-text-muted/70" placeholder="Buscar paciente..." type="text"/>
+</div>
+<!-- Notifications -->
+<button class="relative p-2 text-text-muted hover:text-text-main hover:bg-gray-100 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-2 border-l border-gray-200 ml-2">
+<div class="text-right hidden md:block">
+<p class="text-sm font-bold text-text-main leading-none">Admin</p>
+<p class="text-xs text-text-muted leading-none mt-1">Gestor</p>
+</div>
+<button class="size-9 rounded-full bg-gray-200 bg-cover bg-center border-2 border-white shadow-sm" data-alt="Avatar do usuário logado" style="background-image: none"></button>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 bg-[#f8fcfc]">
+<div class="max-w-7xl mx-auto flex flex-col gap-6">
+<!-- ROW 1: KPI Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Stat 1 -->
+<div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group hover:border-primary/30 transition-all">
+<div class="absolute right-[-10px] top-[-10px] p-4 bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl opacity-50">calendar_today</span>
+</div>
+<p class="text-text-muted text-sm font-medium z-10">Agendamentos hoje</p>
+<div class="flex items-end gap-2 z-10">
+<h3 class="text-3xl font-bold text-text-main">42</h3>
+<span class="text-emerald-600 text-xs font-bold bg-emerald-50 px-1.5 py-0.5 rounded mb-1 flex items-center">
+<span class="material-symbols-outlined text-[12px] mr-0.5">trending_up</span> +5%
+                            </span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group hover:border-primary/30 transition-all">
+<div class="absolute right-[-10px] top-[-10px] p-4 bg-orange-50 rounded-full group-hover:bg-orange-100 transition-colors">
+<span class="material-symbols-outlined text-orange-400 text-4xl opacity-50">pending_actions</span>
+</div>
+<p class="text-text-muted text-sm font-medium z-10">Pendentes confirmação</p>
+<div class="flex items-end gap-2 z-10">
+<h3 class="text-3xl font-bold text-text-main">8</h3>
+<span class="text-orange-500 text-xs font-bold px-1.5 py-0.5 rounded mb-1">Ação necessária</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group hover:border-primary/30 transition-all">
+<div class="absolute right-[-10px] top-[-10px] p-4 bg-blue-50 rounded-full group-hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined text-blue-400 text-4xl opacity-50">hourglass_top</span>
+</div>
+<p class="text-text-muted text-sm font-medium z-10">Lista de espera</p>
+<div class="flex items-end gap-2 z-10">
+<h3 class="text-3xl font-bold text-text-main">12</h3>
+<span class="text-emerald-600 text-xs font-bold bg-emerald-50 px-1.5 py-0.5 rounded mb-1">+2 novos</span>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group hover:border-primary/30 transition-all">
+<div class="absolute right-[-10px] top-[-10px] p-4 bg-red-50 rounded-full group-hover:bg-red-100 transition-colors">
+<span class="material-symbols-outlined text-red-400 text-4xl opacity-50">event_busy</span>
+</div>
+<p class="text-text-muted text-sm font-medium z-10">Faltas ontem</p>
+<div class="flex items-end gap-2 z-10">
+<h3 class="text-3xl font-bold text-text-main">3</h3>
+<span class="text-text-muted text-xs font-medium mb-1">vs 2 semana passada</span>
+</div>
+</div>
+</div>
+<!-- ROW 2: Main Grid (Agenda + Queue) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Agenda (Wider) -->
+<div class="lg:col-span-8 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-text-main">Agenda de hoje</h3>
+<button class="bg-primary hover:bg-primary-dark text-black text-sm font-bold py-2 px-4 rounded-lg shadow-sm shadow-primary/20 flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                                Novo Agendamento
+                            </button>
+</div>
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden flex-1 min-h-[400px]">
+<!-- Filters -->
+<div class="px-5 py-3 border-b border-gray-100 flex gap-3 overflow-x-auto hide-scrollbar">
+<button class="px-3 py-1.5 rounded-full bg-primary/10 text-primary-dark text-xs font-bold whitespace-nowrap border border-primary/20">Todos (42)</button>
+<button class="px-3 py-1.5 rounded-full bg-gray-50 text-text-muted hover:bg-gray-100 text-xs font-bold whitespace-nowrap border border-transparent">Confirmados (24)</button>
+<button class="px-3 py-1.5 rounded-full bg-gray-50 text-text-muted hover:bg-gray-100 text-xs font-bold whitespace-nowrap border border-transparent">Pendentes (8)</button>
+<button class="px-3 py-1.5 rounded-full bg-gray-50 text-text-muted hover:bg-gray-100 text-xs font-bold whitespace-nowrap border border-transparent">Finalizados (10)</button>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-gray-50/50 text-text-muted text-xs uppercase tracking-wider font-semibold">
+<tr>
+<th class="px-5 py-4 w-20">Horário</th>
+<th class="px-5 py-4">Paciente</th>
+<th class="px-5 py-4">Procedimento</th>
+<th class="px-5 py-4 hidden sm:table-cell">Profissional</th>
+<th class="px-5 py-4">Status</th>
+<th class="px-5 py-4 text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100">
+<!-- Row 1 -->
+<tr class="hover:bg-[#f8fcfc] transition-colors group">
+<td class="px-5 py-3 font-bold text-text-main text-sm">08:00</td>
+<td class="px-5 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Avatar paciente Maria" style="background-image: none"></div>
+<div>
+<p class="text-sm font-semibold text-text-main">Maria Silva</p>
+<p class="text-xs text-text-muted">Particular</p>
+</div>
+</div>
+</td>
+<td class="px-5 py-3 text-sm text-text-main">Consulta Cardiologia</td>
+<td class="px-5 py-3 text-sm text-text-muted hidden sm:table-cell">Dr. Roberto</td>
+<td class="px-5 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                                    Confirmado
+                                                </span>
+</td>
+<td class="px-5 py-3 text-right">
+<button class="text-text-muted hover:text-text-main p-1 rounded-md hover:bg-gray-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#f8fcfc] transition-colors group">
+<td class="px-5 py-3 font-bold text-text-main text-sm">08:30</td>
+<td class="px-5 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-xs">JP</div>
+<div>
+<p class="text-sm font-semibold text-text-main">João Pereira</p>
+<p class="text-xs text-text-muted">Unimed</p>
+</div>
+</div>
+</td>
+<td class="px-5 py-3 text-sm text-text-main">Retorno Exames</td>
+<td class="px-5 py-3 text-sm text-text-muted hidden sm:table-cell">Dra. Ana</td>
+<td class="px-5 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">
+<span class="size-1.5 rounded-full bg-blue-500"></span>
+                                                    Na Recepção
+                                                </span>
+</td>
+<td class="px-5 py-3 text-right">
+<button class="text-text-muted hover:text-text-main p-1 rounded-md hover:bg-gray-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#f8fcfc] transition-colors group">
+<td class="px-5 py-3 font-bold text-text-main text-sm">09:00</td>
+<td class="px-5 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Avatar paciente Carlos" style="background-image: none"></div>
+<div>
+<p class="text-sm font-semibold text-text-main">Carlos Souza</p>
+<p class="text-xs text-text-muted">Particular</p>
+</div>
+</div>
+</td>
+<td class="px-5 py-3 text-sm text-text-main">Ecocardiograma</td>
+<td class="px-5 py-3 text-sm text-text-muted hidden sm:table-cell">Dr. Roberto</td>
+<td class="px-5 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-orange-50 text-orange-700 border border-orange-100">
+<span class="size-1.5 rounded-full bg-orange-500"></span>
+                                                    Pendente
+                                                </span>
+</td>
+<td class="px-5 py-3 text-right">
+<button class="text-text-muted hover:text-text-main p-1 rounded-md hover:bg-gray-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#f8fcfc] transition-colors group">
+<td class="px-5 py-3 font-bold text-text-main text-sm">09:30</td>
+<td class="px-5 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-xs">LG</div>
+<div>
+<p class="text-sm font-semibold text-text-main">Luana Gomes</p>
+<p class="text-xs text-text-muted">Bradesco Saúde</p>
+</div>
+</div>
+</td>
+<td class="px-5 py-3 text-sm text-text-main">Consulta Dermatologia</td>
+<td class="px-5 py-3 text-sm text-text-muted hidden sm:table-cell">Dra. Ana</td>
+<td class="px-5 py-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 border border-gray-200">
+<span class="size-1.5 rounded-full bg-gray-400"></span>
+                                                    Finalizado
+                                                </span>
+</td>
+<td class="px-5 py-3 text-right">
+<button class="text-text-muted hover:text-text-main p-1 rounded-md hover:bg-gray-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="px-5 py-4 border-t border-gray-100 flex items-center justify-center">
+<button class="text-sm font-medium text-primary hover:text-primary-dark transition-colors">Ver agenda completa</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Queue (Narrower) -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-text-main flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">queue_music</span>
+                                Fila agora
+                            </h3>
+<a class="text-xs font-bold text-primary hover:underline" href="#">Abrir Fila</a>
+</div>
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col items-center text-center relative overflow-hidden">
+<!-- Decorative background circle -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+<p class="text-text-muted text-sm font-semibold uppercase tracking-wider mb-2">Senha Atual</p>
+<div class="text-6xl font-black text-text-main tracking-tight mb-6">A042</div>
+<div class="w-full grid grid-cols-2 gap-3 mb-6">
+<button class="col-span-2 bg-primary hover:bg-primary-dark text-black font-bold py-3 px-4 rounded-lg shadow-sm shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">campaign</span>
+                                    Chamar
+                                </button>
+<button class="bg-gray-100 hover:bg-gray-200 text-text-main font-semibold py-2 px-4 rounded-lg transition-colors text-sm">
+                                    Em atendimento
+                                </button>
+<button class="bg-gray-100 hover:bg-gray-200 text-text-main font-semibold py-2 px-4 rounded-lg transition-colors text-sm">
+                                    Finalizar
+                                </button>
+</div>
+<div class="w-full pt-4 border-t border-gray-100">
+<p class="text-xs text-text-muted font-medium text-left mb-3 pl-1">Próximas senhas:</p>
+<div class="flex gap-2 overflow-x-auto pb-2 hide-scrollbar">
+<div class="bg-gray-50 border border-gray-200 rounded px-3 py-1.5 text-sm font-bold text-text-main whitespace-nowrap">A043</div>
+<div class="bg-gray-50 border border-gray-200 rounded px-3 py-1.5 text-sm font-bold text-text-main whitespace-nowrap">A044</div>
+<div class="bg-gray-50 border border-gray-200 rounded px-3 py-1.5 text-sm font-bold text-text-main whitespace-nowrap">N102</div>
+<div class="bg-gray-50 border border-gray-200 rounded px-3 py-1.5 text-sm font-bold text-text-muted whitespace-nowrap">...</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ROW 3: Tasks Lists -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-6">
+<!-- Task 1: Pendencies -->
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col">
+<div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-orange-50/30">
+<h3 class="text-base font-bold text-text-main flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-400 text-[20px]">mark_chat_unread</span>
+                                Pendências de confirmação
+                            </h3>
+<span class="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-0.5 rounded-full">8</span>
+</div>
+<div class="p-2 flex-1">
+<ul class="flex flex-col">
+<!-- Item 1 -->
+<li class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg group transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold text-xs">CS</div>
+<div>
+<p class="text-sm font-semibold text-text-main">Carlos Souza</p>
+<p class="text-xs text-text-muted">Hoje, 09:00 - Ecocardiograma</p>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="size-8 flex items-center justify-center rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-colors" title="Confirmar">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="size-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors" title="Ver detalhes">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</li>
+<!-- Item 2 -->
+<li class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg group transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs">MA</div>
+<div>
+<p class="text-sm font-semibold text-text-main">Mariana Alves</p>
+<p class="text-xs text-text-muted">Hoje, 14:15 - Retorno</p>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="size-8 flex items-center justify-center rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-colors" title="Confirmar">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="size-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors" title="Ver detalhes">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</li>
+</ul>
+</div>
+<div class="px-5 py-3 border-t border-gray-100 text-center">
+<button class="text-xs font-bold text-text-muted hover:text-primary transition-colors">Ver todas pendências</button>
+</div>
+</div>
+<!-- Task 2: Waitlist -->
+<div class="bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col">
+<div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-blue-50/30">
+<h3 class="text-base font-bold text-text-main flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-400 text-[20px]">person_add</span>
+                                Lista de espera (Oportunidades)
+                            </h3>
+<span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-0.5 rounded-full">2</span>
+</div>
+<div class="p-2 flex-1">
+<ul class="flex flex-col">
+<!-- Item 1 -->
+<li class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg group transition-colors border-l-2 border-transparent hover:border-blue-400">
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-text-main">Fernando Torres</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="text-[10px] font-bold bg-gray-100 text-gray-600 px-1.5 rounded">Cardiologia</span>
+<span class="text-xs text-text-muted">Prefere manhã</span>
+</div>
+</div>
+<button class="text-xs font-bold text-primary hover:text-primary-dark border border-primary/30 hover:bg-primary/5 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_add_on</span>
+                                        Agendar
+                                    </button>
+</li>
+<!-- Item 2 -->
+<li class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg group transition-colors border-l-2 border-transparent hover:border-blue-400">
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-text-main">Beatriz Lima</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="text-[10px] font-bold bg-gray-100 text-gray-600 px-1.5 rounded">Dermatologia</span>
+<span class="text-xs text-text-muted">Qualquer horário</span>
+</div>
+</div>
+<button class="text-xs font-bold text-primary hover:text-primary-dark border border-primary/30 hover:bg-primary/5 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_add_on</span>
+                                        Agendar
+                                    </button>
+</li>
+</ul>
+</div>
+<div class="px-5 py-3 border-t border-gray-100 text-center">
+<button class="text-xs font-bold text-text-muted hover:text-primary transition-colors">Gerenciar lista completa</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>`;
+
+export function UiDashboardEquipeLifemedPage() {
+  return (
+    <section className="ui-stitch-screen" data-route="/ui/dashboard-equipe-lifemed" dangerouslySetInnerHTML={{ __html: screenHtml }} />
+  );
+}

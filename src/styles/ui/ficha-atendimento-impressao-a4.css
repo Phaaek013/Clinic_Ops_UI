@@ -1,0 +1,37 @@
+/* Print Specific Styles */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                background-color: white !important;
+                color: black !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .a4-sheet {
+                box-shadow: none !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                border: none !important;
+                padding: 10mm !important; /* Physical margins */
+            }
+            /* Hide URL headers/footers in modern browsers if possible, 
+               though user settings override this usually */
+        }
+
+        /* Screen Preview Styles */
+        .a4-sheet {
+            /* A4 Ratio approx 1:1.414 */
+            /* Using a fixed width for desktop preview to simulate paper */
+            width: 210mm;
+            min-height: 297mm;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15);
+        }

@@ -1,0 +1,10 @@
+body { font-family: 'Manrope', sans-serif; }
+        .masked-data { filter: blur(3px); transition: filter 0.3s; cursor: pointer; }
+        .masked-data:hover { filter: blur(0); }#tab-avulso:checked ~ .modal-content .field-agendamento { display: none; }
+        #tab-avulso:checked ~ .modal-content .field-motivo { display: block; }
+        #tab-vincular:checked ~ .modal-content .field-agendamento { display: block; }
+        #tab-vincular:checked ~ .modal-content .field-motivo { display: none; }
+        #tab-vincular:checked ~ .modal-content .btn-vincular { background-color: white; color: #13ecec; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); }
+        .dark #tab-vincular:checked ~ .modal-content .btn-vincular { background-color: #334155; }
+        #tab-avulso:checked ~ .modal-content .btn-avulso { background-color: white; color: #13ecec; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); }
+        .dark #tab-avulso:checked ~ .modal-content .btn-avulso { background-color: #334155; }

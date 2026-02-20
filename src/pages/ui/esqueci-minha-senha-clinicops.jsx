@@ -1,0 +1,62 @@
+import '../../styles/ui/esqueci-minha-senha-clinicops.css';
+
+const screenHtml = `<div class="w-full max-w-[440px] flex flex-col items-center">
+<!-- Logo Header -->
+<div class="mb-12 flex flex-col items-center">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">medical_services</span>
+</div>
+<span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">ClinicOps</span>
+</div>
+</div>
+<!-- Main Content Card -->
+<div class="w-full bg-white dark:bg-zinc-900/50 p-8 rounded-xl shadow-sm border border-slate-200 dark:border-zinc-800">
+<div class="text-center mb-8">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Esqueceu sua senha?</h1>
+<p class="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed">
+                    Não se preocupe, insira seu e-mail cadastrado e enviaremos as instruções para recuperação.
+                </p>
+</div>
+<!-- Forgot Password Form -->
+<form class="space-y-6" onsubmit="return false;">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1" for="email">
+                        E-mail
+                    </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">mail</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3.5 bg-slate-50 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-lg text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base" id="email" name="email" placeholder="seu@email.com" type="email"/>
+</div>
+</div>
+<button class="w-full bg-cta hover:brightness-95 active:scale-[0.98] text-slate-900 font-bold py-3.5 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm" type="submit">
+<span>Enviar link de recuperação</span>
+</button>
+</form>
+<!-- Navigation Link -->
+<div class="mt-8 pt-6 border-t border-slate-100 dark:border-zinc-800 text-center">
+<a class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Voltar para o login
+                </a>
+</div>
+</div>
+<!-- Footer Microcopy -->
+<div class="mt-8 flex items-center gap-2 text-slate-400 dark:text-slate-500 text-xs font-medium">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span>Seus dados estão seguros.</span>
+</div>
+</div>
+<!-- Background Decoration (Ultra Minimalist) -->
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-cta/5 blur-[120px]"></div>
+</div>`;
+
+export function UiEsqueciMinhaSenhaClinicopsPage() {
+  return (
+    <section className="ui-stitch-screen" data-route="/ui/esqueci-minha-senha-clinicops" dangerouslySetInnerHTML={{ __html: screenHtml }} />
+  );
+}
